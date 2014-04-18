@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	    <title>Nivo Slider Example</title>
+    	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" />
+
+	</head>
+	<body>
+		<h1>Nivo Slider</h1>
+		<div>
+			<h2>What is Nivo Slider</h2>
+			<p>Nivo Slider is a tool to use for changing images on a page. You can utilize it in many ways. Having different call to actions on a page rotate through automatically at a set interval, or you can use it as a gallery of images and have the user advance to the next one. I personally like this tool because it is easy to use and get up and going on any site. All you have to do is add a couple js files, update some classes, and start the function.</p>
+		</div>
+		<h2>The Code</h2>
+		<p>The code I used in my index.html file is:
+
+		<xmp>
+<head>
+    <title>Nivo Slider Example</title>
+    
+    // These are the different theme files you can utilize for the css
+    <link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
+    
+   //This file is the css for Nivo Slider
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+    
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+</head>
+<body>
+    <div id="wrapper">
+
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="images/hawaii.jpg" data-thumb="images/hawaii.jpg" alt="" title="Hawaii"/>
+                <img src="images/dc.jpg" data-thumb="images/dc.jpg" alt="" title="Washington DC" /></a>
+                <img src="images/ohioCaverns.jpg" data-thumb="images/ohioCaverns.jpg" alt="" data-transition="fold" title="Ohio Caverns"/>
+                <img src="images/gailenburg.jpg" data-thumb="images/gailenburg.jpg" alt=""  />
+            </div>
+            
+        </div>
+
+    </div>
+    <script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+    
+    //js file for the tool where you can edit the different functions
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+    
+    //js file that will start the tool
+    <script type="text/javascript" src="js/main.js"></script></xmp>
+	</p>
+	<p>My main.js files looks like:
+	<xmp>
+	$(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+	</xmp>
+	This will start the function that is located in the jquery.nivo.slider.js file.
+
+	</p>
+	<p> Inside the jquery.nivo.slider.js file there is lot of code, but the part that I chnaged is below. It shows the different options you can use and you can also change these options for each slide instead of gloabally changing them. You would go to the index.html file and add it there.
+	<xmp>
+		//Default settings
+    $.fn.nivoSlider.defaults = {
+        effect: 'random',
+        slices: 15,
+        boxCols: 8,
+        boxRows: 4,
+        animSpeed: 500,
+        pauseTime: 3000,
+        startSlide: 0,
+        directionNav: true,
+        controlNav: true,
+        controlNavThumbs: true,
+        pauseOnHover: true,
+        manualAdvance: false,
+        prevText: 'Prev',
+        nextText: 'Next',
+        randomStart: true,
+        beforeChange: function(){},
+        afterChange: function(){},
+        slideshowEnd: function(){},
+        lastSlide: function(){},
+        afterLoad: function(){}
+    };
+	</xmp>
+
+
+	</p>
+
+
+
+	</body>
+</html>
